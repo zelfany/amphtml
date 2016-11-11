@@ -5,85 +5,77 @@
 <title>Sitemap</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'>
 <style>
-/* Sitemaps */
-#table-outer{padding:7px 10px;margin:0 auto 20px}
-#table-outer table{width:auto;margin:0 auto}
-#table-outer form{font:inherit}
-#table-outer label{display:block;text-align:right;margin:0 10px 0 0;padding:4px 0 0}
-#table-outer select[disabled]{opacity:.4}
-#post-searcher{display:block;margin:0;padding:0}
-#table-outer input{width:100%;border:1px solid #dedede;border-radius:5px;margin:0;padding:5px;text-transform:capitalize!important;outline:0;color:#333!important;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
-#table-outer select{width:100%;border:1px solid #dedede;border-radius:5px;margin:0 0 5px;padding:5px;text-transform:capitalize!important;outline:0;color:#333!important;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
-#table-outer select option{min-height:1.4em!important;}
-#table-outer input#feed-q{padding:5px 10px!important;}
-#feed-container{background:#fff;display:block;clear:both;margin:0;padding:0;list-style:none;overflow:hidden;position:relative;border-top:none}
-#feed-container li{list-style:none;margin:0;padding:0;display:inline}
-#feed-container li a{text-decoration:none;color:#2C2C2C;font-weight:bold;font-size:16px}
-#feed-container li a:hover{text-decoration:none;color:#E94141}
-#feed-container li img{margin:0 15px 5px 0;padding:;width:100%!important;height:250px!important;display:block;}
-#feed-nav{margin:10px 0 30px;text-align:center;font-weight:500;width:100%}
-#feed-nav a,#feed-nav span{color:#fff;text-decoration:none;display:block;opacity:.8}
-#feed-nav a:hover,#feed-nav span:hover{opacity:1}
-#feed-nav span{cursor:wait}</style>
+#tabbed-toc {background:#1A5286;margin:0 auto;;overflow:hidden;position:relative;color:#444;}
+#tabbed-toc .loading {display:block;padding:5px 10px;font:12px Oswald;color:white;}
+#tabbed-toc ul,#tabbed-toc ol,#tabbed-toc li {margin:0 0;padding:0 0;list-style:none;}
+#tabbed-toc .toc-tabs {width:30%;float:left;}
+#tabbed-toc .toc-tabs li a {display:block;font:16px Roboto;height:auto;overflow:hidden;text-overflow:ellipsis;color:#ccc;text-decoration:none;padding:12px 12px 12px 12px;cursor:pointer;}
+#tabbed-toc .toc-tabs li a:hover {background:#847EBE;color:white;}
+#tabbed-toc .toc-tabs li a.active-tab {background:#273258;color:white;-webkit-box-shadow:-2px 2px 2px rgba(0,0,0,.5);-moz-box-shadow:-2px 2px 2px rgba(0,0,0,.5);box-shadow:-2px 2px 2px rgba(0,0,0,.5);position:relative;z-index:5;margin:0 -1px 0 0;}
+#tabbed-toc .toc-content,#tabbed-toc .divider-layer {width:70%;float:right;background:white;border-left:5px solid #273258;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+#tabbed-toc .divider-layer {float:none;display:block;position:absolute;top:0;right:0;bottom:0;}
+#tabbed-toc .panel {position:relative;z-index:5;font:14px Roboto;}
+#tabbed-toc .panel li a {display:block;position:relative;font-weight:400;font-size:17px;color:#fff;line-height:32px;height:32px;padding:6 12px;text-decoration:none;outline:none;overflow:hidden;}
+#tabbed-toc .panel li time {display:block;font-weight:normal;font-size:13px;color:#999;float:right;margin-right:10px;}
+#tabbed-toc .panel li .summary {display:block;padding:10px 12px 10px;border-bottom:1px solid #ddd;overflow:hidden;}
+#tabbed-toc .panel li .summary img.thumbnail {float:left;display:block;margin:0 8px 0 0;padding:4px 4px;width:72px;height:72px;border:1px solid #dcdcdc;background-color:#fafafa;}
+#tabbed-toc .panel li:nth-child(even) {background-color:#F5EAEA;}
+#tabbed-toc .panel li a:hover,#tabbed-toc .panel li a:focus,#tabbed-toc .panel li a:hover time,#tabbed-toc .panel li.bold a {background-color:#273258;color:white;outline:none;}
+#tabbed-toc .panel li.bold a:hover,#tabbed-toc .panel li.bold a:hover time {background-color:#273258;}
+
+  </style>
 </head>
 <body>
 
-<div id='table-outer'>
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <label for='feed-order'>Sort articles by:</label>
-      </td>
-      <td>
-        <select id='feed-order'>
-          <option selected='' value='published'>Latest articles</option>
-          <option value='updated'>Last updated article</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label for='label-sorter'>Filter articles by category :</label>
-      </td>
-      <td>
-        <select disabled='' id='label-sorter'>
-          <option selected=''>Loading....</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label for='feed-q'>Search for articles by keyword:</label>
-      </td>
-      <td>
-        <form id='post-searcher'>
-          <input id='feed-q' placeholder='Type and press ENTER' type='text'/>
-        </form>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-  <br />
-<header id="result-desc"></header>
-<br />
-<ul id="feed-container"></ul>
-<div id="feed-na">
-</div>
-<script type='text/javaScript'>
-document.write;var loadToc,loadCategories,_toc={init:function(){var cfg={url:'https://duipee.blogspot.com/',maxResults:3,numChars:160,thumbWidth:250,thumbHeight:250,navText:"View Next Article &#9660;",resetToc:"Back to the beginning",noImage:"https://4.bp.blogspot.com/-FV3IoZ5vnpk/WBR8JLRGQ0I/AAAAAAAAGvs/0KjmPUK1UREXqxfo6a2AumC1MgUOB4hWACLcB/s1600/zip%2Bdisk.jpg",loading:"<span>Loading...</span>",counting:"<div>Loading article...</div>",searching:"<span>search...</span>"},w=window,d=document,el=function(id){return d.getElementById(id);},o={a:el('feed-order'),b:el('label-sorter').parentNode,c:el('post-searcher'),d:el('feed-q'),e:el('result-desc'),f:el('feed-container'),g:el('feed-nav'),h:d.getElementsByTagName('head')[0],i:0,j:null,k:'published',l:0,m:""},fn={a:function(){old=el('temporer-script');old.parentNode.removeChild(old);},b:function(param){var script=d.createElement('script');script.type="text/javascript";script.id="temporer-script";script.src=param;if(el('temporer-script'))fn.a();o.h.appendChild(script);},c:function(mode,tag,order){o.i++;o.e.innerHTML=cfg.counting;o.g.innerHTML=cfg[mode==1?"searching":"loading"];if(mode===0){fn.b(tag!==null?cfg.homePage+'/feeds/posts/summary/-/'+ tag+'?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&orderby='+ order+'&callback=loadToc':cfg.homePage+'/feeds/posts/summary?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&orderby='+ order+'&callback=loadToc');}else if(mode==1){fn.b(cfg.homePage+'/feeds/posts/summary?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&q='+ tag+'&orderby='+ order+'&callback=loadToc');}
-o.j=(tag!==null)?tag:null;o.l=mode;o.a.disabled=true;o.b.children[0].disabled=true;},d:function(json){var _h;o.g.innerHTML="";o.e.innerHTML=o.l==1?'<span>Search results for keywords <b>&#8220;'+ o.m+'&#8221;</b> ('+ json.feed.openSearch$totalResults.$t+' result)</span>':'<strong>Total: '+ json.feed.openSearch$totalResults.$t+' Article</strong>';if("entry"in json.feed){var a=json.feed.entry,b,c,_d,e="0 Komentar",f="",g;for(var i=0;i<cfg.maxResults;i++){if(i==a.length)break;b=a[i].title.$t;_d=("summary"in a[i])?a[i].summary.$t.replace(/<br ?\/?>/ig," ").replace(/<(.*?)>/g,"").replace(/<iframe/ig,"").substring(0,cfg.numChars):"";g=("media$thumbnail"in a[i])?a[i].media$thumbnail.url.replace(/\/s[0-9]+\-c/,"\/s"+ cfg.thumbWidth+""):cfg.noImage.replace(/\/s[0-9]+\-c/,"\/s"+ cfg.thumbWidth+"");for(var j=0,jen=a[i].link.length;j<jen;j++){c=(a[i].link[j].rel=="alternate")?a[i].link[j].href:"#";}
-for(var k=0,ken=a[i].link.length;k<ken;k++){if(a[i].link[k].rel=="replies"&&a[i].link[k].type=="text/html"){e=a[i].link[k].title;break;}}
-_h=d.createElement('li');_h.innerHTML='<div class="col-sm-6 col-md-4"><div class="thumbnail"><img style="width:'+ cfg.thumbWidth+'px;height:'+ cfg.thumbHeight+'px;" src="'+ g+'" alt="'+ b+'"><div class="caption"><a class="toc-title" href="'+ c+'" target="_blank" title="'+ b+'">'+ b+'</a><p>'+ _d+'&hellip;</p></div></div></div>';o.f.appendChild(_h);}
-_h=d.createElement('a');_h.href='#load-more';_h.innerHTML=cfg.navText;_h.onclick=function(){fn.c(o.l,o.j,o.k);return false;};}else{_h=d.createElement('a');_h.href='#reset-content';_h.innerHTML=cfg.resetToc;_h.onclick=function(){o.i=-1;o.e.innerHTML=cfg.counting;o.f.innerHTML="";fn.c(0,null,'published');o.a.innerHTML=o.a.innerHTML;o.b.children[0].innerHTML=o.b.children[0].innerHTML;return false;};}
-o.g.appendChild(_h);o.a.disabled=false;o.b.children[0].disabled=false;},e:function(json){var a=json.feed.category,b='<select id="label-sorter"><option value="" selected disabled>Select Category...</option>';for(var i=0,len=a.length;i<len;i++){b+='<option value="'+ encodeURIComponent(a[i].term)+'">'+ encodeURIComponent(a[i].term)+'</option>';}
-b+='</select>';o.b.innerHTML=b;o.b.children[0].onchange=function(){o.i=-1;o.f.innerHTML="";o.g.innerHTML=cfg.loading;fn.c(0,this.value,o.k);};}};loadToc=fn.d;loadCategories=fn.e;fn.b(cfg.homePage+'/feeds/posts/summary?alt=json-in-script&start-index='+(o.i+ 1)+'&max-results='+ cfg.maxResults+'&orderby=published&callback=loadToc');fn.b(cfg.homePage+'/feeds/posts/summary?alt=json-in-script&max-results=0&orderby=published&callback=loadCategories');o.a.onchange=function(){o.i=-1;o.f.innerHTML="";o.g.innerHTML=cfg.counting;o.b.children[0].innerHTML=o.b.children[0].innerHTML;fn.c(0,null,this.value);o.k=this.value;};o.c.onsubmit=function(){o.i=-1;o.f.innerHTML="";o.m=o.d.value;fn.c(1,o.d.value,o.k);return false;};}};_toc.init();</script>
-<div class='clear'></div>
-
-
-<div class='inline-ad'>
-</div>
+<div id="tabbed-toc">
+<span class="loading">Loading...</span></div>
+<script type="text/javascript">
+var tabbedTOC = {
+    blogUrl: "//duipee.blogspot.com", // Blog URL
+    containerId: "tabbed-toc", // Container ID
+    activeTab: 1, // The default active tab index (default: the first tab)
+    showDates: false, // `true` to show the post date
+    showSummaries: true, // `true` to show the posts summaries
+    numChars: 200, // Number of summary chars
+    showThumbnails: true, // `true` to show the posts thumbnails (Not recommended)
+    thumbSize: 40, // Thumbnail size
+    noThumb: "http://2.bp.blogspot.com/-ieYHX80CJK0/VQqSToHGH-I/AAAAAAAAAKc/jKZayXxDP50/s1600/mapIcon-Travel.png", // A "no thumbnail" URL
+    monthNames: [ // Array of month names
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"
+    ],
+    newTabLink: true, // Open link in new window?
+    maxResults: 99999, // Maximum post results
+    preload: 0, // Load the feed after 0 seconds (option => time in milliseconds || "onload")
+    sortAlphabetically: true, // `false` to sort posts by published date
+    showNew: 10, // `false` to hide the "New!" mark in most recent posts, or define how many recent posts are to be marked
+    newText: " - <em style='color:red;'>New</em>" // HTML for the "New" text
+};
+</script>
+    <script type='text/javascript'>
+      //<![CDATA[
+var tabbedTOC_defaults={blogUrl:"http://www.blogger.duipee.com/",containerId:"tabbed-toc",activeTab:1,showDates:false,showSummaries:false,numChars:200,showThumbnails:false,thumbSize:72,noThumb:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",monthNames:["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"],newTabLink:true,maxResults:99999,preload:0,sortAlphabetically:true,showNew:false,newText:" - <em style='color:red;'>Baru!</em>"};for(var i in tabbedTOC_defaults){tabbedTOC_defaults[i]=(typeof(tabbedTOC[i])!==undefined&&typeof(tabbedTOC[i])!=='undefined')?tabbedTOC[i]:tabbedTOC_defaults[i];}
+function clickTab(pos){var a=document.getElementById(tabbedTOC_defaults.containerId),b=a.getElementsByTagName('ol'),c=a.getElementsByTagName('ul')[0],d=c.getElementsByTagName('a');for(var t=0;t<b.length;t++){b[t].style.display="none";b[parseInt(pos,10)].style.display="block";}
+for(var u=0;u<d.length;u++){d[u].className="";d[parseInt(pos,10)].className="active-tab";}}
+function showTabs(json){var total=parseInt(json.feed.openSearch$totalResults.$t,10),c=tabbedTOC_defaults,entry=json.feed.entry,category=json.feed.category,skeleton="",newPosts=[];for(var g=0;g<(c.showNew===true?5:c.showNew);g++){if(g==entry.length)break;entry[g].title.$t=entry[g].title.$t+(c.showNew!==false?c.newText:'');}
+entry=c.sortAlphabetically?entry.sort(function(a,b){return(a.title.$t.localeCompare(b.title.$t));}):entry;category=c.sortAlphabetically?category.sort(function(a,b){return(a.term.localeCompare(b.term));}):category;skeleton='<span class="divider-layer"></span><ul class="toc-tabs">';for(var h=0,cen=category.length;h<cen;h++){skeleton+='<li class="toc-tab-item-'+ h+'"><a href="javascript:clickTab('+ h+');">'+ category[h].term+'</a></li>';}
+skeleton+='</ul>';skeleton+='<div class="toc-content">';for(var i=0,cnt=category.length;i<cnt;i++){skeleton+='<ol class="panel" data-category="'+ category[i].term+'"';skeleton+=(i!=(c.activeTab-1))?' style="display:none;"':'';skeleton+='>';for(var j=0;j<total;j++){if(j==entry.length)break;var link,entries=entry[j],pub=entries.published.$t,month=c.monthNames,title=entries.title.$t,summary=("summary"in entries&&c.showSummaries===true)?entries.summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,c.numChars)+'&hellip;':'',img=("media$thumbnail"in entries&&c.showThumbnails===true)?'<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="'+ entries.media$thumbnail.url.replace(/\/s72(\-c)?\//,"/s"+c.thumbSize+"-c/")+'"/>':'<img class="thumbnail" style="width:'+c.thumbSize+'px;height:'+c.thumbSize+'px;" alt="" src="'+ c.noThumb.replace(/\/s72(\-c)?\//,"/s"+c.thumbSize+"-c/")+'"/>',cat=(entries.category)?entries.category:[],date=(c.showDates)?'<time datetime="'+ pub+'" title="'+ pub+'">'+ pub.substring(8,10)+' '+ month[parseInt(pub.substring(5,7),10)-1]+' '+ pub.substring(0,4)+'</time>':'';for(var k=0;k<entries.link.length;k++){if(entries.link[k].rel=='alternate'){link=entries.link[k].href;break;}}
+for(var l=0,check=cat.length;l<check;l++){var target=(c.newTabLink)?' target="_blank"':'';if(cat[l].term==category[i].term){skeleton+='<li title="'+ cat[l].term+'"';skeleton+=(c.showSummaries)?' class="bold"':'';skeleton+='><a href="'+ link+'"'+ target+'>'+ title+ date+'</a>';skeleton+=(c.showSummaries)?'<span class="summary">'+ img+ summary+'<span style="display:block;clear:both;"></span></span>':'';skeleton+='</li>';}}}
+skeleton+='</ol>';}
+skeleton+='</div>';skeleton+='<div style="clear:both;"></div>';document.getElementById(c.containerId).innerHTML=skeleton;clickTab(c.activeTab-1);}
+(function(){var h=document.getElementsByTagName('head')[0],s=document.createElement('script');s.type='text/javascript';s.src=tabbedTOC_defaults.blogUrl+'/feeds/posts/summary?alt=json-in-script&max-results='+ tabbedTOC_defaults.maxResults+'&orderby=published&callback=showTabs';if(tabbedTOC_defaults.preload!=="onload"){setTimeout(function(){h.appendChild(s);},tabbedTOC_defaults.preload);}else{window.onload=function(){h.appendChild(s);};}})();
+      //]]>
+    </script>
  
 </body>
 </html>

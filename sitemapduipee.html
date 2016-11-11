@@ -28,50 +28,46 @@
 </head>
 <body>
 
-<div id="table-outer">
-
-  <table>
-    <tbody>
-      <tr>
-        <td>
-          <label for="feed-order">Urutkan artikel berdasarkan:</label>
-        </td>
-        <td>
-          <select id="feed-order">
-            <option selected="" value="published">Artikel terbaru</option>
-            <option value="updated">Artikel yang terakhir di update</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="label-sorter">Filter artikel berdasarkan kategori:</label>
-        </td>
-        <td>
-          <select disabled="" id="label-sorter">
-            <option selected="">Loading....</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="feed-q">Cari artikel dengan kata kunci:</label>
-        </td>
-        <td>
-          <form id="post-searcher">
-            <input id="feed-q" placeholder="Ketik dan tekan ENTER" type="text" />
-          </form>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div id='table-outer'>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <label for='feed-order'>Sort articles by:</label>
+      </td>
+      <td>
+        <select id='feed-order'>
+          <option selected='' value='published'>Latest articles</option>
+          <option value='updated'>Last updated article</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for='label-sorter'>Filter articles by category :</label>
+      </td>
+      <td>
+        <select disabled='' id='label-sorter'>
+          <option selected=''>Loading....</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for='feed-q'>Search for articles by keyword:</label>
+      </td>
+      <td>
+        <form id='post-searcher'>
+          <input id='feed-q' placeholder='Type and press ENTER' type='text'/>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<br />
-<header id="result-desc"></header>
-<br />
-<ul id="feed-container"></ul>
-<div id="feed-nav">
-</div>
+<div class='alert alert-success' id='result-desc' role='alert'/>
+        <div class='row'><ul id='feed-container'/></div>
+<button class='btn btn-primary' id='feed-nav' type='button'/>
 
 <script type='text/javaScript'>
 document.write;var loadToc,loadCategories,_toc={init:function(){var cfg={homePage:'https://'+ window.location.hostname,maxResults:3,numChars:160,thumbWidth:250,thumbHeight:250,navText:"View Next Article &#9660;",resetToc:"Back to the beginning",noImage:"https://4.bp.blogspot.com/-FV3IoZ5vnpk/WBR8JLRGQ0I/AAAAAAAAGvs/0KjmPUK1UREXqxfo6a2AumC1MgUOB4hWACLcB/s1600/zip%2Bdisk.jpg",loading:"<span>Loading...</span>",counting:"<div>Loading article...</div>",searching:"<span>search...</span>"},w=window,d=document,el=function(id){return d.getElementById(id);},o={a:el('feed-order'),b:el('label-sorter').parentNode,c:el('post-searcher'),d:el('feed-q'),e:el('result-desc'),f:el('feed-container'),g:el('feed-nav'),h:d.getElementsByTagName('head')[0],i:0,j:null,k:'published',l:0,m:""},fn={a:function(){old=el('temporer-script');old.parentNode.removeChild(old);},b:function(param){var script=d.createElement('script');script.type="text/javascript";script.id="temporer-script";script.src=param;if(el('temporer-script'))fn.a();o.h.appendChild(script);},c:function(mode,tag,order){o.i++;o.e.innerHTML=cfg.counting;o.g.innerHTML=cfg[mode==1?"searching":"loading"];if(mode===0){fn.b(tag!==null?cfg.homePage+'/feeds/posts/summary/-/'+ tag+'?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&orderby='+ order+'&callback=loadToc':cfg.homePage+'/feeds/posts/summary?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&orderby='+ order+'&callback=loadToc');}else if(mode==1){fn.b(cfg.homePage+'/feeds/posts/summary?alt=json-in-script&start-index='+((o.i*cfg.maxResults)+ 1)+'&max-results='+ cfg.maxResults+'&q='+ tag+'&orderby='+ order+'&callback=loadToc');}

@@ -77,21 +77,7 @@ var labelArray = [],
                 "height": innerHeight,
                 "overflow": "hidden"
             });
-            // Animation
-            function newsTicker() {
-                window.setTimeout(function() {
-                    $container.find('li:last').stop().animate({
-                        opacity: 0
-                    }, 1000, function() {
-                        $(this).hide().prependTo($container).slideDown(1000, function() {
-                            $(this).stop().animate({
-                                opacity: 1
-                            }, 1000, newsTicker);
-                        });
-                    });
-                }, 3000);
-            } newsTicker();
-        }
+
     };
 </script>
 <script>

@@ -4,39 +4,36 @@
 <meta charset="utf-8">
 <title>TV Online Trans TV</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'>
-<script src="http://www.indostreamix.tv/player/jwplayer.js" type="text/javascript"></script>
+
 <link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
-<style>body{margin:0;padding:0;}</style>
+<style>body{margin:0;padding:0}.play-wrapper[data-poster] svg{background-color:#003333;border-radius:6px;padding:4px;}.play-wrapper[data-poster] svg path{fill:#FFFF66!important}</style>
+
 </head>
 <body>
 <div id="tv"></div>
-<script>
-var playerInstance = jwplayer("tv");
-playerInstance.setup({
-
-        file: "https://verizon.nim.mivo.tv/wh76pzref44u53o6/transtv2_all/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9MTEvMjUvMjAxNiAyOjEwOjMwIEFNJmhhc2hfdmFsdWU9L2IyMWpMMy9kMWxtaGNSV3ZRZy9uQT09JnZhbGlkbWludXRlcz0xMCZpZD1FVjE1NV80MF8xMTJfNTNfMzZfNjBfNDF8djQtd2VifDExLzI1LzIwMTYgMjoxMCBBTXwzNi44MC44My4xNg==",
-        image: 'https://1.bp.blogspot.com/-LYKGxAVZDDk/WISh5t0aBFI/AAAAAAAAIJE/JT-lqtQBU0YpKO7ppj0MjwnEWb0SeGx_QCLcB/s1600/transtv.png',
-        title: 'Live TV',
-
-        width: '100%',
-        height: '100%',
-        stretching: "exactfit",
-        autostart: true,
-        androidhls: true,
-        abouttext: "Live TV",
-        aboutlink: "",
-        primary: 'flash',
-        advertising: {
-        client: "vast",
-        admessage: 'Your TV will resume in XX seconds.',
-         tag: "http://delivery.ambient-platform.com/247/xmlvideoad/zid_1394000743/wid_1394000617/type_inline/cb_[timestamp]"
-  }
-    });
-    jwplayer("tv").onBeforePlay(function(){ jwplayer().setVolume(80); });
-    jwplayer("tv").onError(function(){
-       jwplayer("tv").load([{file:"https://e19-us-1.nim.mivo.tv/sedz1j6exe/transtv2_all/playlist.m3u8?nimblesessionid=317651627&wmsAuthSign=c2VydmVyX3RpbWU9MTEvMjUvMjAxNiAyOjEwOjMwIEFNJmhhc2hfdmFsdWU9L2IyMWpMMy9kMWxtaGNSV3ZRZy9uQT09JnZhbGlkbWludXRlcz0xMCZpZD1FVjE1NV80MF8xMTJfNTNfMzZfNjBfNDF8djQtd2VifDExLzI1LzIwMTYgMjoxMCBBTXwzNi44MC44My4xNg=="}]);
-       jwplayer("tv").play();
-    });
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.61/clappr.min.js"></script>
+<div id="player-wrapper"></div>
+<script type="text/javascript">
+var player = new Clappr.Player(
+{
+  source: 'https://e19-us-1.nim.mivo.tv/sedz1j6exe/transtv2_all/playlist.m3u8?nimblesessionid=317651627&wmsAuthSign=c2VydmVyX3RpbWU9MTEvMjUvMjAxNiAyOjEwOjMwIEFNJmhhc2hfdmFsdWU9L2IyMWpMMy9kMWxtaGNSV3ZRZy9uQT09JnZhbGlkbWludXRlcz0xMCZpZD1FVjE1NV80MF8xMTJfNTNfMzZfNjBfNDF8djQtd2VifDExLzI1LzIwMTYgMjoxMCBBTXwzNi44MC44My4xNg==',
+  parentId: "#player-wrapper",
+  width:'100%',
+  height:'100%',
+  disableVideoTagContextMenu: true,
+  flushLiveURLCache: true,
+  poster: "",
+  baseUrl: '/player/',
+  plugins: '[Clappr.FlasHLS]',
+  scaling:'exactfit',
+        playbackType: 'live',
+        bufferTime: 1,
+        startLevel: 0,
+        loop: true,
+  playbackNotSupportedMessage: "Player Error !<br> Browser ini tidak mendukung video kami, gunakan Opera, Chrome, Firefox atau lainnya.",
+  autoPlay: true,
+  mediacontrol: {seekbar: "#FF4500", buttons: "#FFF"}
+});
 </script>
 </body>
 </html>

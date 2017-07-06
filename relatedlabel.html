@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Related Posts</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
+<style>
+body {
+  background-color:white;
+  margin:0;
+  padding:0;
+  font-family: Roboto, Arial, sans-serif;
+font-style: normal;
+font-weight: 400;
+}
+a {color:#212121;font-size:12px;}
+a:hover {color: #212121;text-decoration: underline;}
+.related-post {
+margin:20px 0 0 -25px;
+padding: 0;
+overflow:hidden;
+}
+.related-post h4 {
+font-weight: 700;
+font-size:120%;
+margin:10px 0 20px 25px;
+}
+/* Style 3 */
+ul.related-post-style-3{
+list-style:none;
+margin:0;
+padding-left:16px;
+width:100%;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+}
+.related-post-style-3 li a{
+font-weight:400 !important;
+line-height:1.4em;text-align: center;
+vertical-align: top;
+}
+.related-post-style-3 li a:hover{
+color: #212121;text-decoration: underline;
+}
+.related-post-style-3 .related-post-item {
+display:block;
+float:left;
+width:22.2%;
+height:auto;
+padding:0 10px;
+border-left:1px solid #eee;
+margin-bottom:-989px;
+padding-bottom:999px;
+list-style:none;
+word-wrap:break-word;
+}
+.related-post-style-3 .related-post-item:first-child {border-left:none}
+.related-post-style-3 .related-post-item:last-child {padding-right:0}
+.related-post-style-3 .related-post-item-thumbnail {
+display:block;
+margin:0 0 10px;
+width:100%;
+height:auto;
+max-width:none;
+background-color:transparent;
+border:none;
+padding:0;
+}
+.related-post-style-3 .related-post-item-title {font-weight:bold}
+@media screen and (max-width:650px){
+.related-post-style-3 .related-post-item
+{width:22%}
+padding-bottom:20px;
+}
+@media screen and (max-width:610px){
+.related-post-style-3 .related-post-item
+{width:21%}
+padding-bottom:20px;
+}
+@media screen and (max-width:420px){
+.related-post-style-3 .related-post-item
+{width:43%}
+padding-bottom:50px;
+}
+@media screen and (max-width:420px){
+.related-post-style-3 .related-post-item
+{width:95%;height:auto;position: relative;border-bottom: 1px solid #e1e1e1}
+.related-post-style-3 .related-post-item-thumbnail{
+width: 30%}
+.related-post-style-3 .related-post-item-tooltip{
+margin-left: 32%;position: absolute;top: 10px;}
+}
+</style>
+</head>
+<body>
+<div id="related-post" class="related-post"></div>
+<script>
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+var labelArray = [getQueryVariable("label")],
+    relatedPostConfig = {
+	homePage: getQueryVariable("url"),	
+        numPosts: 4,
+        summaryLength: 0,
+        widgetStyle: 3,
+        callBack: function() {}
+    };
+</script>
+<script>
+/*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
+var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Baca juga artikel menarik lainnya :</h4>",widgetStyle:1,homePage:"https://www.droidpluss.net/",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAxhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDM0MiwgMjAxMC8wMS8xMC0xODowNjo0MyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCNzM2Q0UxMDk2RUUxMUU2OEJEOEIyMkYxMEQwRjhBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCNzM2Q0UxMTk2RUUxMUU2OEJEOEIyMkYxMEQwRjhBQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI3MzZDRTBFOTZFRTExRTY4QkQ4QjIyRjEwRDBGOEFBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI3MzZDRTBGOTZFRTExRTY4QkQ4QjIyRjEwRDBGOEFBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ibPzTAAAADNQTFRFJ1l6UXuUOGeESnaQQm+LTHeRTniSOWiFRXKNO2mGQ3CMQG2KPWuIT3qTP2yJR3OOSXSPilUgJwAABS1JREFUeNrsne16ojAQRssUBT+q3v/V7rrtVktNSCDBd+Sc//Whp+8MIUzs2xsAAAAAAAAAAAAAAAAAAAAAAEBBbD3Ml9U3a+EyX9b7amRtkZXOBlnIQhaykMXdkGQhC1nIQhYNnmQhC1nIQhYNnmSRLJJVSZb7FzmLyvL+fg9ZyEIWsrzL2iILWZQhspCFLBo8skgWspCFLGQhC1ksHUgWySJZyEIWspCFLGSxdCBZyHqyrOvAyqk9lDmA/NqyzG4HrC87JV9yssw2P3+oM2SFrufw66fOMuESk2XnxxODyHpwNYFRVGQ9uJh9aMjVkDW8ll1wJHhvyEq4lhqFaBPvsEKPO3aKyLpY0YS05l1WdDa/oKxra3xtWbuCRXhd6jqXdYgfkbGibXrSx+nIGj7m1KrDr/VJMVlPuRtas4isf0U4cTGyPlkzPm9tsqydccdYmaz/RTitxQvJWqLB26wPFHrcaesvHX48qee3eCFZ8To8lC3CSdFa1eOOzXwoUEpWbAn/XkCWtTMre0VbNIMinPChUrKOQVe9FS/CCS1ea1u5rxms/eyPFXthsQ24sgpFmN/i1V6Fvdd6FfbwF/2w+Z/xxCmaB8WysQp3wkl1KDdyZN3HoFSKrLC6EjcOxcGQ3eX2Zzta8WfC6dFSHTnq2rY9Fhs5suBz59F1GdYgVIS5Ld735J+1Sa9LSz0auE7WNTEJtiy2+XO2lSTLkobdIkWYeVGeZX0lppvxfH5t8bYOWUmDlHYotrnvWNZt0z5ma6QIVyLrfporYmvspVFOi3csK2mkebQIcy7LrazBE3fAlo0HK6PFu11ndUnbOCmuMh7DnCbLPlI2vVKKcK4s/WQ9Gqn8bcvSgpXc4p0my5I2VBNdJV+YT1mBwwUDW4lF+JeTva6s4ELzp63kYCVvS7qUFf6lLXYPCNO9bIOPbbncbKUXYfKYvcdkRcvr21ZGEaZemkNZI1NvX7ZyijC1xfsrw8hExJ2trCJMfk0nmSybtY1wtWWZrpJavOarsD6yjXBOSIllFmHiAJhkGVpkG6FLqqlTk435TNbn5FE3YxthCgktXlJWeItqSmTKRUtx1qEPb+jVC1ZKi1eUFd7+tJr/KGq8xevJup+VHIwbRU6cL1KHgrLCW+tW1VVzMG9Lh8EQ7n22gl/7sFS09L64pwkO/nWVXY22eLkv7vk13f1tK39VnsvGnMl6MH9t1ZdYc46APK9nPTw28GnL6rsa+24MtTn44Ctjuywgq/EkK3Qe5WjWLeFqpMWLyQqPIyziaqTFOzno1JyXkdU4ktU8nWiLlzpv2D9fVuNGloCr6Kk6pQPlCsGKHpx281UFCnUo9JVQvYasvTlIlkiwYlcpI0slWLEWryNLxVXkVJ1Kz9IJVuQyVZKlE6zIwWkRWUrBCl+niiwlV8EWryFLK1jBFq/R4LWCFbxQiWSJBSvY4iWSpRas0JUqyJILVuhUnYSspvERLYWe1buWtXCytoKyTqrJMkWcTP7pgixkIQtZyEIWspA1Vxb/GplkIQtZyEIWsrgbkixkIYue1TStd5aU9ZIgK4MNspCFLHoWySJZJAtZyEIWspCFLJYOyCJZyEIWspCFLGQhC1nIYgVPskgWskgWsihDkoUsZCELWcjibkiykIUsZCELWdwNSRaykIUsZNHgSRbJIlkkC1nIogxJFslCFrKQRc8iWciiDEkWyUIWyUIWspCFLGQhC1mss14gWbYe3gAAAAAAAAAAAAAAAAAAAAAAAADU+SPAAH4uoUf/iMARAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail"in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/\/s[0-9]+(\-c)?/, "/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary"in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><a href="'+v+'" title="'+t+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
+</script>
+</body>
+</html>

@@ -1,10 +1,11 @@
-<style>
+ <style>
+body{margin:0;padding:0}
 #ss-form input:focus ~ label,
 #ss-form textarea:focus ~ label,
 #ss-form input:valid ~ label,
 #ss-form textarea:valid ~ label {
   font-size: 0.75em;
-  color: #8e44ad;
+  color: #e8554e;
   top: -2.25rem;
   -webkit-transition: all 0.125s ease;
   transition: all 0.125s ease;
@@ -56,7 +57,7 @@
   display: block;
   width: 0;
   height: 3px;
-  background: #8e44ad;
+  background: #e8554e;
   position: absolute;
   left: 50%;
   -webkit-transition: width 0.4s ease-in-out;
@@ -68,7 +69,7 @@
   display: block;
   width: 0;
   height: 3px;
-  background: #8e44ad;
+  background: #e8554e;
   position: absolute;
   right: 50%;
   -webkit-transition: width 0.4s ease-in-out;
@@ -100,7 +101,7 @@
   font-family: "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: bold;
   letter-spacing: 1px;
   border-radius: 0;
   padding: 0 25px;
@@ -116,20 +117,57 @@
 
 #ss-form .btn-default:hover,
 #ss-form .btn-default:focus {
-  background-color: #8e44ad;
-  border: 1px solid #0400bf;
+  background-color: #e8554e;
+  border: 1px solid #df4f49;
   color: white;
   outline: 0;
 }
 
-#iframe_uexxnchh {
-	display:none;
+#fade {
+    opacity: 0;
+  display: none;
+}
+.thanks_layout{text-align: center; position: fixed; top:0; left:0; bottom:0; right:0; background:rgba(255,255,255,.8);z-index:99999}
+.thanks_message{font-family: "Helvetica", "Arial", sans-serif;width:50%;background:#fff;border-radius:5px;padding:20px;border:1px solid #DEDEDE;text-align: center; color:#333; position: absolute; top: 10%; left: 50%;margin-left:-25%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.thanks_message .close a{position:absolute; top:-15px; right: -15px; width:20px; height:20px; line-height:20px; text-align:center; background:#fff; border:1px solid #ccc; border-radius:100%;color:#333;font-family: "Helvetica", "Arial", sans-serif;font-size:18px;text-decoration:none}
+@media screen and (max-width:768px){.thanks_message{width:90%!important;margin-left:-45%!important;}
+}
+@media screen and (max-width:600px){#ss-form .styled-input {
+  width: 100%;
+}
 }
 </style>
 
-<iframe id="iframe_uexxnchh" name="iframe_uexxnchh" onload="if(typeof sent_uexxnchh!='undefined'){window.location='http://www.pinjamandanatunai.info/p/form-submitted-successfully.html';}"></iframe>
-
-<form action="https://docs.google.com/forms/d/1Fg0ep0aMfHx2zvyePAki85srJmbo_KOKO7yBGQcnMhM/formResponse" id="ss-form" method="POST" onsubmit="sent_uexxnchh=true" target="iframe_uexxnchh">
+<script type="text/javascript">
+var submitted=false;
+var fadeEffect=function(){
+ return{
+  init:function(id, flag, target){
+   this.elem = document.getElementById(id);
+   clearInterval(this.elem.si);
+   this.target = target ? target : flag ? 100 : 0;
+   this.flag = flag || -1;
+   this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
+   this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
+  },
+  tween:function(){
+   if(this.alpha == this.target){
+    clearInterval(this.elem.si);
+   }else{
+    var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
+    this.elem.style.opacity = value / 100;
+    this.elem.style.filter = 'alpha(opacity=' + value + ')';
+    this.alpha = value
+   }
+  }
+ }
+}();
+function myFunction() {
+    location.reload();
+}
+</script>
+<iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){);}" style="display: none;"></iframe>
+            <form action="https://docs.google.com/forms/d/1Fg0ep0aMfHx2zvyePAki85srJmbo_KOKO7yBGQcnMhM/formResponse" id="ss-form" method="POST" onsubmit="fadeEffect.init('fade', 1);document.getElementById('fade').style.display = 'block'" target="hidden_iframe">
 <div class="styled-input">
 <div class="styled-input-in">
 <input aria-label="Nama Lengkap" dir="auto" id="entry.1354726311" name="entry.1354726311" required="required" title="" type="text" value="" />
@@ -146,7 +184,7 @@
 </div>
 <div class="styled-input wide">
 <div class="styled-input-in">
-<textarea aria-label="Alamat Lengkap" aria-required="true" cols="0" dir="auto" id="entry.157173604" name="entry.157173604" required="required" rows="8"></textarea>
+<textarea aria-label="Alamat Lengkap" aria-required="true" cols="0" dir="auto" id="entry.157173604" name="entry.157173604" required="required" rows="4"></textarea>
                                 <label>Alamat Lengkap</label>
                                 <span class="span1"></span><span class="span2"></span>
 </div>
@@ -154,7 +192,7 @@
 <div class="styled-input">
 <div class="styled-input-in">
 <input aria-label="Agunan" dir="auto" id="entry.1221022880" name="entry.1221022880" required="required" title="" type="text" value="" />
-                                <label>Agunan - ISI: Rumah atau Ruko</label>
+                                <label>Agunan - ISI : Rumah atau Ruko</label>
                                 <span class="span1"></span><span class="span2"></span>
 </div>
 </div>
@@ -163,3 +201,13 @@
                     <input name="fbzx" type="hidden" value="-3925898159592105271" />
 <button class="btn btn-default" name="submit" type="submit">Send</button>
 </form>
+            <div id="fade">
+<div class="thanks_layout">
+<div class="thanks_message">
+<img alt="Thumb" height="48" width="48" src="https://4.bp.blogspot.com/-rY5km74yj_I/V1ItqrbspBI/AAAAAAAAmxA/SK-aLPTjyuo8uiSYylRJ4tLslk2LJ581QCLcB/s1600/ic_thumb_up_black_24dp_2x.png" />
+        <h2>Form submitted successfully</h2>
+        <div>Jika tidak ada halangan dan kesibukan lainnya, admin akan langsung merespon pesan yang Anda kirimkan.</div>
+        <div class="close"><a href="javascript:void(0)" onclick="document.getElementById('fade').style.display = 'none' ;myFunction()" title="Close">&times;</a></div>
+</div>
+</div>
+</div>

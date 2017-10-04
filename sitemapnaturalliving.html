@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
+<meta content='IE=9; IE=8; IE=7; IE=EDGE; chrome=1' http-equiv='X-UA-Compatible'/>
+
+
+<style>
+/*
+CSS STATIC PAGE
+*/
+
+/* font */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2) format('woff2');
+}
+@font-face {
+ font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Titillium WebBold'), local('TitilliumWeb-Bold'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wprxP6Eu1_xfSBSoi9uie1FdE.woff2) format('woff2');
+}
+@font-face {
+font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2) format('woff2');
+}
+/* Material Icon */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ewrjPiaoEww8AihgqWRJAo.woff) format('woff'), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2'), url(https://fonts.gstatic.com/s/materialicons/v12/2fcrYFNaTjcS6g4U3t-Y5bbKic1PW3nceB3q24YFOMg.ttf) format('truetype');
+}
+.material-icons {font-family: 'Material Icons';font-weight:normal;font-style:normal;font-size:inherit;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;vertical-align:middle;
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+/* Support for IE. */
+font-feature-settings: 'liga';
+}
+
+#navbar-iframe,.quickedit{height:0;visibility:hidden;display:none}
+body{background:#f3f3f3;font-family:font-weight:400;;font-size:15px;line-height:22px;text-decoration:none}
+a,a:link,a:visited{color:#239802;text-decoration:none}
+a:hover,a:active{color:#111;text-decoration:none}
+h2.date-header,#items-thumbnail amp-img{display:none}
+
+h2.date-header,#items-thumbnail amp-img{display:none}
+.header-wrapper{color:#777;height:45px;position:relative;z-index:10;margin:0 auto;}
+#header{float:left;width:auto;overflow:hidden;z-index:10;margin:0;padding:0}
+#header-inner{margin:0;padding-top:7px}
+#header h1,#header p{font-size:25px;text-transform:uppercase;line-height:12px;color:#f50;padding:10px 10px 10px 0;margin:0;font-weight:bold}
+#header h1 a,#header h1.title a:hover{color:#239802;text-decoration:none;}
+#header img-amp{border:0 none;background:none;width:auto;height:auto;margin:0 auto}
+#header .description,#items-thumbnail,.breadcrumbs{display:none}
+
+.outerpic-wrapper{width:100%;padding:0;margin:0 auto;overflow:hidden}
+.headerpic-wrapper{background:#fff;width:100%;padding:0;margin:0 auto;box-shadow: 2px 0 2px rgba(0,0,0,.3);}
+.content-wrapper{position:relative;max-width:904px;margin:0 auto}
+.outer-wrapper{position:relative;width:100%;padding:0}
+.clear{clear:both}
+
+h3.date-header{text-transform:none;font:normal 12px Arial;color:#666;line-height:1.2em;margin:.1em 0}
+.post{margin:10px 0;padding:0;background:#fff;border:1px solid #e2e5eb}
+.post h1,.post h2{font-size:200%;line-height:1.5em;color:#111;margin:0;padding-top:15px;padding-left:15px;padding-bottom:10px;font-weight:700;text-align:left}
+.post h1 a,.post h1 a:visited,.post h1 strong,.post h2 a,.post h2 a:visited,.post h2 strong{display:block;text-decoration:none;color:#333;}
+.post h1 strong,.post h1 a:hover,.post h2 strong,.post h2 a:hover{color:#f50}
+.post-body{padding:15px;font-size:16px;line-height:1.7em;color:#444;margin:1.0em 0 .75em;margin-top:-10px}
+::selection{background:#6CC57E;color:#fff}
+.postadstop {display:inline-block;width:auto;height:auto;margin:0 15px 15px 0;float:left}
+.postadsbottom{display:block;width:100%;height:auto;margin:20px auto;text-align:center}
+.postadstop amp-img{width:100%;max-width:300px;height:auto}
+.postadsbottom amp-img{width:100%;max-width:336px;height:auto}
+.postadstop span, .postadsbottom span{font-size:12px;font-weight:400;color:#555;text-align:center;margin:0 auto 5px;display:block}
+#header2 img,.sidebar img{max-width:100%;width:auto;border:0;}
+
+@media screen and (max-width: 800px){
+.main-wrapper{margin-left:0;width:100%;}
+
+}
+
+
+</style>
+
+</head>
+
+<body itemscope='itemscope' itemtype='http://schema.org/WebPage'>
+
+<div class='content-wrapper'>
+<div class='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+       
+<div class='post-outer'>
+<article class='post hentry' itemscope='itemscope' itemtype='http://schema.org/Blog'>
+
+View the Natural Living site map to find out who we are and what we do, and see news and press releases. The sitemap includes links to the major sections of our website.<br /><br />
+<script>
+var numposts = 1000;
+var standardstyling = true;
+
+/*  
+    rawgit url (https://cdn.rawgit.com/D-dig/js/gh-pages/sitemap3.js)
+*/
+
+function startpost(json){
+  for (var i = 0; i < numposts; i++){
+    var entry = json.feed.entry[i];
+    var posttitle = entry.title.$t;
+    var posturl;
+    
+    if (i == json.feed.entry.length) break;
+    
+    for (var k = 0; k < entry.link.length; k++){
+      if (entry.link[k].rel == 'alternate'){
+        posturl = entry.link[k].href;break;
+      }
+    }
+        
+    posttitle = posttitle.link(posturl);
+    if (standardstyling) document.write('<li>');
+    
+    document.write(posttitle);
+  }
+  
+  if (standardstyling) document.write('</li>');
+}
+
+function finished(){
+  document.write('<br /><br /><a href="https://duipee.blogspot.co.id/" style="font-size: 10 px; text-decoration:none; " target="_blank" title="Blog Kontes SEO">Blog Kontes SEO</a>');
+}
+</script>
+<h3>Acne Treatment</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Acne%20Treatment?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+<h3>Body Fitness</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Body%20Fitness?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+<h3>Fit and Beauty</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Fit%20and%20Beauty?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Healthcare Books</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Healthcare%20Books?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Healthy Foods</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Healthy%20Foods?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Healthy life</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Healthy%20life?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Mesothelioma Treatment</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Mesothelioma%20Treatment?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=309"></script></ol>
+
+
+<h3>Natural Herb</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Natural%20Herb?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Natural Multi Vitamin</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Natural%20Multi%20Vitamin?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Parenting</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Parenting?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+
+<h3>Weight Loss</h3><ol>
+<script src="http://www.naturalliving.tk/feeds/posts/default/-/Weight%20Loss?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=300"></script></ol>
+
+<div class='clear'></div>
+
+</div>
+</article>
+<div class='clear'></div>
+</div>
+
+        </div></div>
+      
+<!--Can't find substitution for tag [adEnd]-->
+</div>
+
+</div>
+<div class='clr'></div>
+
+</body>
+</HTML>

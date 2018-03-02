@@ -28,32 +28,31 @@ a:hover {color:#ff5500}
 /* ==== Related Post Widget Start ==== */
 .related-post {
   margin: 2em auto 0;
-}
-.related-post h4 {display:none;}
 
-/* Style 3 */
-.related-post-style-3,
-.related-post-style-3 li {
+}
+.related-post h4 {display:none;
+
+}
+
+/* Style 4 */
+.related-post-style-4,
+.related-post-style-4 li {
   margin: 0;
   padding: 0;
   list-style: none;
   word-wrap: break-word;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  outline: none;
 }
-.related-post-style-3 .related-post-item {
+.related-post-style-4 .related-post-item {
   display: block;
   float: left;
   width: 180px;
   height: auto;
   padding: 10px;
-  border-left: 1px solid #eee;
-  margin-bottom: -989px;
-  padding-bottom: 999px;
 }
-.related-post-style-3 .related-post-item:first-child {
-  border-left: none;
-}
-.related-post-style-3 .related-post-item-thumbnail {
+.related-post-style-4 .related-post-item-thumbnail {
   display: block;
   margin: 0 0 10px;
   width: 180px;
@@ -64,8 +63,8 @@ a:hover {color:#ff5500}
   border: none;
   padding: 0;
 }
-.related-post-style-3 .related-post-item-title {
-display:none;
+.related-post-style-4 .related-post-item-title {
+  display:none;
 }
 /* ==== Related Post Widget End ==== */
 </style>
@@ -88,7 +87,7 @@ var labelArray = [],
 		homePage: getQueryVariable("url"),
         numPosts: 6,
         summaryLength: 100,
-        widgetStyle: 3,
+        widgetStyle: 4,
         callBack: function() {
             var $container = $('#' + this.containerId + ' > ul'),
                 $list = $container.find('li'),

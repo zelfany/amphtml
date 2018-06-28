@@ -9,15 +9,17 @@ body {
   background-color:transparent;
   margin:0;
   padding:0;
-  overflow:hidden;font-family:&#39;Roboto&#39;,sans-serif;
+  overflow:hidden;font-family:&#39;Roboto&#39;,sans-serif;font-size:15px;font-weight:400;text-align:left;color:#000;
 }
-
+  a,a:link,a:visited {color:#468EE5;text-decoration:none;transition:all .3s}
+  #recentpost{}
 img.recent_thumb {padding:1px;width:100px;height:auto; float:left;margin:0 10px 5px 1px;}.recent_posts_with_thumbs {float: left;width: 100%;min-height: 72px;margin: 5px 10px 5px 0px;padding: 0;}ul.recent_posts_with_thumbs li {padding-bottom:5px;padding-top:5px;min-height:72px;overflow:hidden}.recent_posts_with_thumbs a {text-decoration:none;}.recent_posts_with_thumbs strong {font-size:10px;}
   .recent_posts_with_thumbs li {list-style:none;}
 </style>
 
 </head>
 <body>
+<div id='recentpost'>
 <script>
 function showrecentpostswiththumbs(json) {document.write('<ul class="recent_posts_with_thumbs">'); for (var i = 0; i < numposts; i++) {var entry = json.feed.entry[i];var posttitle = entry.title.$t;var posturl;if (i == json.feed.entry.length) break;for (var k = 0; k < entry.link.length;k++){
 if(entry.link[k].rel=='replies'&&entry.link[k].type=='text/html'){var commenttext=entry.link[k].title;var commenturl=entry.link[k].href;}
@@ -91,9 +93,11 @@ var numposts = 3;var showpostthumbnails = true;var displaymore = false;var displ
 </script><div class="clear"/></div>
 <br />
 
-
-  
-  <script type="text/javascript"> $(document).ready(function() {$('.bp_thumnail resize').attr('src', function(i, src) {return src.replace( 's72-c', 'w1600' );});}); </script>
-
+  </div>
+<script type='text/javascript'>
+//<![CDATA[
+function BlogMasTamvan(e,t){for(var g=document.getElementById(e),m=g.getElementsByTagName("img"),r=0;r<m.length;r++)m[r].src=m[r].src.replace(/\/s72\-c/,"/s"+t),m[r]}BlogMasTamvan("recentpost",1600);
+//]]>
+</script>
 </body>
 </html>

@@ -109,11 +109,8 @@ var numposts = 3;var showpostthumbnails = true;var displaymore = false;var displ
 <br />
 
 
-<script type='text/javascript'>
-//<![CDATA[
-function BlogMasTamvan(e,t){for(var g=document.getElementById(e),m=g.getElementsByTagName("img"),r=0;r<m.length;r++)m[r].src=m[r].src.replace(/\/s72\-c/,"/s"+t),m[r]}BlogMasTamvan("recent_thumb",1600);
-//]]>
-</script>
+  
+  <script type="text/javascript"> $(document).ready(function() {$('.bp_thumnail resize').attr('src', function(i, src) {return src.replace( 's72-c', 'w1600' );});}); </script>
 
 </body>
 </html>

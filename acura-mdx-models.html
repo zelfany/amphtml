@@ -15,6 +15,7 @@ img.recent_thumb {padding:1px;width:100px;height:auto; float:left;margin:0 10px 
 </head>
 <body>
 <div id='recentpost'>
+
 <script>
 function showrecentpostswiththumbs(json) {document.write('<ul class="recent_posts_with_thumbs">'); for (var i = 0; i < numposts; i++) {var entry = json.feed.entry[i];var posttitle = entry.title.$t;var posturl;if (i == json.feed.entry.length) break;for (var k = 0; k < entry.link.length;k++){
 if(entry.link[k].rel=='replies'&&entry.link[k].type=='text/html'){var commenttext=entry.link[k].title;var commenturl=entry.link[k].href;}
@@ -27,6 +28,7 @@ var postdate = entry.published.$t;var cdyear = postdate.substring(0,4);var cdmon
 if(showpostthumbnails==true)
 document.write('<img alt="'+posttitle+'" title="'+posttitle+'" class="recent_thumb" src="'+thumburl+'"/>');
 document.write('<b><a href="'+posturl+'" target ="_blank" title="'+posttitle+'">'+posttitle+'</a></b><br>');
+
     if ("content" in entry) {
       var postcontent = entry.content.$t;}
     else
@@ -48,9 +50,12 @@ if (showpostsummary == true) {
          document.write(postcontent + '...');
           document.write('</i>');}
 }
+
 var towrite='';var flag=0;
 document.write('<br><strong>');
+
 if(showpostdate==true) {towrite=towrite+monthnames[parseInt(cdmonth,10)]+'-'+cdday+' - '+cdyear;flag=1;}
+
 if(showcommentnum==true)
 {
 if (flag==1) {towrite=towrite+' | ';}
@@ -61,6 +66,7 @@ towrite=towrite+commenttext;
 flag=1;
 ;
 }
+
 if(displaymore==true)
 {
 if (flag==1) towrite=towrite+' | ';
@@ -74,13 +80,14 @@ if(displayseparator==false)
 if (i!=(numposts-1))
 document.write('<hr color="#d9f1fa" size=0.5>');
 }document.write('</ul>');
+
 }
 </script>
 <script>
-var numposts = 3;var showpostthumbnails = true;var displaymore = false;var displayseparator = true;var showcommentnum = false;var showpostdate = false;var showpostsummary = true;var numchars = 100;
-</script><script src="https://www.duipee.com/feeds/posts/default/-/Acura%20MDX%20models?orderby=published&amp;alt=json-in-script&amp;callback=showrecentpostswiththumbs">
+var numposts = 4;var showpostthumbnails = true;var displaymore = false;var displayseparator = true;var showcommentnum = false;var showpostdate = false;var showpostsummary = true;var numchars = 100;
+</script><script src="https://www.duipee.com/feeds/posts/default/-/Acura%20ILX%20models?orderby=published&amp;alt=json-in-script&amp;callback=showrecentpostswiththumbs">
 </script><div class="clear"/></div>
-<br />
+
 
   </div>
 <script type='text/javascript'>

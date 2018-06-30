@@ -32,7 +32,7 @@ function startpost(json){
     
     for (var k = 0; k < entry.link.length; k++){
       if (entry.link[k].rel == 'alternate'){
-        posturl = entry.link[k].href;break;
+        posturl = entry.link[k].href;break; target="_blank";
       }
     }
         

@@ -15,42 +15,10 @@ body {background-color:transparent;margin:0;padding:0;}
 <body>
 <div id='recentpost'>
 <script>
-var numposts = 1000;
-var standardstyling = true;
-
-/*  
-    rawgit url (https://cdn.rawgit.com/D-dig/js/gh-pages/sitemap3.js)
-*/
-
-function startpost(json){
-  for (var i = 0; i < numposts; i++){
-    var entry = json.feed.entry[i];
-    var posttitle = entry.title.$t;
-    var posturl;
-    
-    if (i == json.feed.entry.length) break;
-    
-    for (var k = 0; k < entry.link.length; k++){
-      if (entry.link[k].rel == 'alternate'){
-        posturl = entry.link[k].href;break;
-      }
-    }
-        
-    posttitle = posttitle.link(posturl);
-    if (standardstyling) document.write('<li>');
-    
-    document.write(posttitle);
-  }
-  
-  if (standardstyling) document.write('</li>');
-}
-
-function finished(){
-  document.write('<br /><br /><a href="https://duipee.blogspot.co.id/" style="font-size: 10 px; text-decoration:none; " target="_blank" title="Blog Kontes SEO">Blog Kontes SEO</a>');
-}
+var postTitle=new Array();var postUrl=new Array();var postMp3=new Array();var postDate=new Array();var postYear=new Array();var postMonth=new Array();var postYearMonth=new Array();var postYearMonth2=new Array();var postTanggal=new Array();var postLabels=new Array();var postBaru=new Array();var sortBy="titleasc";var tocLoaded=false;var numChars=250;var postFilter="";var numberfeed=0;var month2=["January","February","March","April","May","June","July","August","September","October","November","December"];function loadtoc(a){function b(){if("entry" in a.feed){var d=a.feed.entry.length;numberfeed=d;ii=0;for(var h=0;h<d;h++){var m=a.feed.entry[h];var e=m.title.$t;var l=m.published.$t.substring(0,10);var p=m.published.$t.substring(5,7);var g=m.published.$t.substring(8,10);var n=month2[parseInt(p,10)-1]+" "+m.published.$t.substring(0,4);var c="/"+m.published.$t.substring(0,4)+"_"+p+"_01_archive.html";var j;for(var f=0;f<m.link.length;f++){if(m.link[f].rel=="alternate"){j=m.link[f].href;break}}var o="";for(var f=0;f<m.link.length;f++){if(m.link[f].rel=="enclosure"){o=m.link[f].href;break}}postTitle.push(e);postDate.push(l);postUrl.push(j);postYearMonth.push(n);postYearMonth2.push(c);postTanggal.push(g)}}}b();displayToc2();document.write()}function displayToc2(){var a=0;var b=0;while(b<postTitle.length){temp1=postYearMonth[b];document.write("<p/>");document.write("<ul>");firsti=a;do{document.write("<li>");document.write('<a href="'+postUrl[a]+'" title="'+postTitle[a]+'" target="_blank">'+postTitle[a]+"</a>");document.write("</li>");a=a+1}while(postYearMonth[a]==temp1);b=a;document.write("</ul>");if(b>postTitle.length){break}}};
 </script>
-<ul>
-<script src="https://www.duipee.com/feeds/posts/default?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul><br />
+<script src="https://www.duipee.com/feeds/posts/default/?max-results=9999&alt=json-in-script&callback=loadtoc"></script>
+
   </div>
 
 </body>

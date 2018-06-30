@@ -22,7 +22,7 @@ img.label_gambar{float:left;padding:5px;width:180px;height:120px;margin:0px;}
     {s=entry.content.$t;a=s.indexOf("<img");b=s.indexOf("src=\"",a);c=s.indexOf("\"",b+5);d=s.substr(b+5,c-b-5);if((a!=-1)&&(b!=-1)&&(c!=-1)&&(d!="")){thumburl=d;}
     else thumburl='';}
  thumburl = thumburl.replace("/s72-c/","/s");
-    document.write('<a href="'+posturl+'" title="'+posttitle+'"><img class="label_gambar" src="'+thumburl+'" title="'+posttitle+'" alt="'+posttitle+'"/></a>');
+    document.write('<a href="'+posturl+'" title="'+posttitle+'" target="_blank"><img class="label_gambar" src="'+thumburl+'" title="'+posttitle+'" alt="'+posttitle+'"/></a>');
     if(i!=(numposts-1))
     document.write('');}
     document.write('</div>');}

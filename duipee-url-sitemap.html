@@ -32,14 +32,14 @@ function startpost(json){
     
     for (var k = 0; k < entry.link.length; k++){
       if (entry.link[k].rel == 'alternate'){
-        posturl = entry.link[k].href;break; target="_blank";
+        posturl = entry.link[k].href;break; 
       }
     }
         
     posttitle = posturl.link(posturl);
     if (standardstyling) document.write('<li>');
     
-    document.write(posttitle);
+    document.write(posttitle target="_blank");
   }
   
   if (standardstyling) document.write('</li>');

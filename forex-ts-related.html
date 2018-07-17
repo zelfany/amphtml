@@ -30,7 +30,7 @@ body{background:#fff;color:#111;font-family: Roboto, Arial, sans-serif;font-size
   list-style: none;
 }
 .related-post-style-2 li {
-  padding: 10px;min-height:89px;
+  padding: 10px 0;min-height:90px;
   border-top: 1px solid #eee;
   overflow: hidden;
 }
@@ -70,7 +70,7 @@ var labelArray = [],
     relatedPostConfig = {
 		homePage: getQueryVariable("url"),
         numPosts: 6,
-        summaryLength: 170,
+        summaryLength: 160,
         widgetStyle: 2,
         callBack: function() {
             var $container = $('#' + this.containerId + ' > ul'),

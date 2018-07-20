@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Health and Natural Living Url Sitemap</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<style>
+body {background-color:transparent;margin:0;padding:0;}
+  a,a:link,a:visited {color:#468EE5;text-decoration:none;font-size:15px;transition:all .3s}
+  #recentpost{overflow:hidden;font-family:Roboto,sans-serif;font-size:13px;font-weight:400;text-align:left;color:#000;line-hight:1.7em}
+</style>
+
+</head>
+<body>
+<div id='recentpost'>
+<script>
+var numposts = 1000;
+var standardstyling = true;
+
+/*  
+    rawgit url (https://cdn.rawgit.com/D-dig/js/gh-pages/sitemap3.js)
+*/
+
+function startpost(json){
+  for (var i = 0; i < numposts; i++){
+    var entry = json.feed.entry[i];
+    var posttitle = entry.link$t;
+    var posturl;
+    
+    if (i == json.feed.entry.length) break;
+    
+    for (var k = 0; k < entry.link.length; k++){
+      if (entry.link[k].rel == 'alternate'){
+        posturl = entry.link[k].href;break;
+      }
+    }
+        
+    posttitle = posturl.link(posturl);
+    if (standardstyling) document.write('<li>');
+    
+    document.write(posttitle);
+  }
+  
+  if (standardstyling) document.write('</li>');
+}
+
+function finished(){
+  document.write('<br /><br /><a href="https://duipee.blogspot.co.id/" style="font-size: 10 px; text-decoration:none; " target="_blank" title="Blog Kontes SEO">Blog Kontes SEO</a>');
+}
+</script>
+
+<h3>
+Acne Treatment</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Acne%20Treatment?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Body Fitness</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Body%20Fitness?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Fit and Beauty</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Fit%20and%20Beauty?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Mesothelioma Book</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Mesothelioma%20Book?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Healthy Foods</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Healthy%20Foods?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Healthy life</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Healthy%20life?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Mesothelioma Treatment</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Mesothelioma%20Treatment?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Natural Herb</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Natural%20Herb?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Natural Multi Vitamin</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Natural%20Multi%20Vitamin?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Parenting</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Parenting?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+<h3>
+Weight Loss</h3>
+<ul>
+<script src="http://healthandnaturalliving.blogspot.com/feeds/posts/default/-/Weight%20Loss?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+  </div>
+
+</body>
+</html>

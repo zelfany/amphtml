@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Duipee Recent Post AMP Blogspot</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<style>
+body {
+  background-color:transparent;
+  margin:0;
+  padding:0;
+}
+
+.btn,.btn:active{background-image:none}
+.btn{font-weight:400;padding:6px 12px;margin-bottom:5px;font-size:14px;line-height:1.42857143;text-align:center;white-space:nowrap;-ms-touch-action:manipulation;touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;border-radius:4px;cursor:pointer}
+.btn:active:focus,.btn:focus{outline:0}
+.btn:focus,.btn:hover{color:#333;text-decoration:none;outline:0}
+.btn:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
+.btn-primary{color:#fff!important;background-color:#337ab7;border-color:#2e6da4}
+.btn-primary:focus,.button-group button:disabled{color:#fff;background-color:#286090;border-color:#122b40}
+.btn-primary:active,.btn-primary:hover{color:#fff;background-color:#286090;border-color:#204d74}
+.btn-danger{color:#fff!important;background-color:#d9534f;border-color:#d43f3a}
+.btn-danger:focus{color:#fff;background-color:#c9302c;border-color:#761c19}
+.btn-danger:active,.btn-danger:hover{color:#fff;background-color:#c9302c;border-color:#ac2925}
+.btn-info{color:#fff!important;background-color:#5bc0de;border-color:#46b8da}
+.btn-info:focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}
+.btn-info:active,.btn-info:hover{color:#fff;background-color:#31b0d5;border-color:#269abc}
+.btn-xs{font-size:12px;line-height:1.5;border-radius:3px;padding:1px 5px}
+#parser2 textarea#somewhere{background:#f8f8f8;border:1px solid #ccc;height:300px;width:100%;padding:10px;margin:0 0 10px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-family:Consolas,Monaco,'Andale Mono',monospace;color:#111}
+#parser2 textarea#somewhere:active,#parser2 textarea#somewhere:focus{border:2px solid #e8554e;outline:0}
+.btn-sm{font-size:12px;line-height:1.5;border-radius:3px;padding:5px 10px}
+.btn-xs{font-size:12px;line-height:1.5;border-radius:3px;padding:1px 5px}
+.collapse{display:none}
+#parser2{position:relative}
+.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}
+.alert{padding:15px;border:1px solid transparent;border-radius:4px;position:absolute;top:10px;right:10px;min-width:230px} button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none;line-height:1}
+.close{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2}
+button.close:focus{outline:0}
+.close:hover{opacity:1!important}
+#btnInfo h4{margin:0}
+#button-link{display:none}
+.clear{clear:both;display:block;margin-bottom:2px;}
+
+</style>
+
+</head>
+<body>
+<div id="parser2">
+<textarea id="somewhere" placeholder='Tulis/paste kode di sini lalu klik tombol Parse Codes'></textarea>
+<div class='alert alert-success margin-bottom-20 collapse' id='btnInfo' role='alert'>
+<button class='close close-copy' onclick='document.getElementById(&quot;btnInfo&quot;).style.display = &quot;none&quot;;cdClear();' type='button'><span aria-hidden='true'>&#215;</span></button>
+<h4>Codes copied to clipboard!</h4>
+</div>
+<br/>
+<button onclick="convert();" class='btn btn-primary btn-sm btn-parse' type="button">Parse Codes</button>
+<div class="clear"></div>
+<button class='btn button-link btn-xs btn-info' id='button-link' data-clipboard-action='copy' data-clipboard-target='#somewhere' type='submit'>Copy codes to clipboard!</button> <button class='btn btn-danger btn-xs' id='btn_clear' onclick='cdClear();'>Bersihkan</button>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+function downloadJSAtOnload(){var d=document.createElement("script");d.src="https://cdn.rawgit.com/KompiAjaib/kompi-js/084f0a35/copyclipboard_parse.js",document.body.appendChild(d)}window.addEventListener?window.addEventListener("load",downloadJSAtOnload,!1):window.attachEvent?window.attachEvent("onload",downloadJSAtOnload):window.onload=downloadJSAtOnload;
+//]]>
+</script>
+
+</body>
+</html>

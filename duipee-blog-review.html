@@ -9,148 +9,34 @@ body {background-color:transparent;margin:0;padding:0;}
   a,a:link,a:visited {color:#468EE5;text-decoration:none;font-size:15px;transition:all .3s}
   .recentpost{overflow:hidden;font-family:Roboto,sans-serif;font-size:13px;font-weight:400;text-align:left;color:#000;}
  
-#masonry {
-  column-count: 2;
-  column-gap: 1em;
+.main{
+background-color:#FFFFFF;
+border:1px solid #ccc;
+width:80%;
+margin:0 auto;
+padding:2% 0 0 2%;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
 }
-
-@media(min-width: 30em) {
-  #masonry {
-    column-count: 3;
-    column-gap: 1em;
-  }
+.post{
+width:22%;
+background:#666666;
+margin:0 2% 2% 0;
+padding:0
 }
-
-@media(min-width: 40em) {
-  #masonry {
-    column-count: 4;
-    column-gap: 1em;
-  }
-}
-
-@media(min-width: 60em) {
-  #masonry {
-    column-count: 5;
-    column-gap: 1em;
-  }
-}
-
-@media(min-width: 75em) {
-  #masonry {
-    column-count: 6;
-    column-gap: 1em;
-  }
-}
-
-.item {
-  background-color: none;
-  display: inline-block;
-  margin: 0 0 1em 0;
-  width: 100%;
-  cursor: pointer;
-}
-
-img.label_gambar {
-  max-width: 100%;
-  height: auto;
-  width: 100%;
-  margin-bottom: -4px;
   
-  /*idk why but this fix stuff*/
-}
-
-.item.active {
-  animation-name: active-in;
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
-}
-
-.item.active:before {
-  content: "+";
-  transform: rotate(45deg);
-  font-size: 48px;
-  color: white;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color:rgba(0,0,0,0.85);
-  border-radius: 50%;
-  width:48px;
-  height:48px;
-  text-align:center;
-  line-height:48px;
-  z-index:12;
-}
-
-.item.active img {
-  animation-name: active-in-img;
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
-}
-
-
-@keyframes active-in {
-  0% {
-    opacity:1;
-    background-color:white;
-  }
+  img.label_gambar{float:left;padding:0;width:200px;height:auto;margin:0px;}
+ 
   
-  50% {
-    opacity:0;
-    background-color:rgba(0,0,0,0.90);
-  }
-  
-  100% {
-    opacity: 1;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color:rgba(0,0,0,0.90);
-  }
-}
-
-@keyframes active-in-img {
-  0% {
-    opacity:1;
-    transform:translate(0%, 0%);
-    top: 0;
-    left: 0;
-    max-width: 100%;
-  }
-  49% {
-    opacity:0;
-    transform: translate(0%, -50%);
-  }
-  50% {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-  }
-  100% {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  width: auto;
-  max-height: 95vh;
-  opacity:1;
-  }
-}
 </style>
 
 </head>
 <body>
+  <div class="main">
   
-  <div class="container">
-  <div id="masonry">
-    <div class="item">
+
+    <div class="post">
     <script type='text/javascript'>
     //<![CDATA[
     function labelthumbs(json){document.write('<div>');for(var i=0;i<numposts;i++){var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='replies'&&entry.link[k].type=='text/html'){var commenttext=entry.link[k].title;var commenturl=entry.link[k].href;}
@@ -168,7 +54,25 @@ img.label_gambar {
     <script type='text/javascript'>var numposts = 10;</script>
     <script type="text/javascript" src="https://duipee.blogspot.com/feeds/posts/default/-/Reviews?orderby=updated&amp;alt=json-in-script&amp;callback=labelthumbs"></script>
 
-  </div></div></div>
+  </div></div>
+  
+  
+  <script type='text/javascript'>
+//<![CDATA[
+document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js\"></scr" + "ipt>");
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+var elem = document.querySelector('.main');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.post'
+});
+//]]>
+  </script>
+  
+  
 <script type='text/javascript'>
 //<![CDATA[
 function BlogMasTamvan(e,t){for(var g=document.getElementById(e),m=g.getElementsByTagName("img"),r=0;r<m.length;r++)m[r].src=m[r].src.replace(/\/s72\-c/,"/s"+t),m[r]}BlogMasTamvan("recentpost",1600);

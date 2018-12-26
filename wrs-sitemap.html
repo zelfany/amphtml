@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Water Restoration Services Sitemap</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<style>
+body {background-color:transparent;margin:0;padding:0;}
+  a,a:link,a:visited {color:#468EE5;text-decoration:none;font-size:15px;transition:all .3s}
+  #recentpost{overflow:hidden;font-family:Roboto,sans-serif;font-size:13px;font-weight:400;text-align:left;color:#000;line-hight:1.7em}
+</style>
+
+</head>
+<body>
+<div id='recentpost'>
+<script>
+var numposts = 1000;
+var standardstyling = true;
+
+/*  
+    rawgit url (https://cdn.rawgit.com/D-dig/js/gh-pages/sitemap3.js)
+*/
+
+function startpost(json){
+  for (var i = 0; i < numposts; i++){
+    var entry = json.feed.entry[i];
+    var posttitle = entry.title.$t;
+    var posturl;
+    
+    if (i == json.feed.entry.length) break;
+    
+    for (var k = 0; k < entry.link.length; k++){
+      if (entry.link[k].rel == 'alternate'){
+        posturl = entry.link[k].href;break;
+      }
+    }
+        
+    posttitle = posttitle.link(posturl);
+    if (standardstyling) document.write('<li>');
+    
+    document.write(posttitle);
+  }
+  
+  if (standardstyling) document.write('</li>');
+}
+
+function finished(){
+  document.write('<br /><br /><a href="https://duipee.blogspot.co.id/" style="font-size: 10 px; text-decoration:none; " target="_blank" title="Blog Kontes SEO">Blog Kontes SEO</a>');
+}
+</script>
+
+<h3>24 hour water damage repair</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/24%20hour%20water%20damage%20repair?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Fire Damage</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Fire%20Damage?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Flood Damage</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Flood%20Damage?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Los Angeles Water Damage Restoration</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Los%20Angeles%20Water%20Damage%20Restoration?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Mold Damage</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Mold%20Damage?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Water Damage Restoration</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Water%20Damage%20Restoration?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Water Damage Restoration Directory</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Water%20Damage%20Restoration%20Directory?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Water Restoration Books</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Water%20Restoration%20Books?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Water Restoration FAQ</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Water%20Restoration%20FAQ?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+<h3>Water Restoration Glossary</h3><ul>
+<script src="http://www.waterrestorationservices.info/feeds/posts/default/-/Water%20Restoration%20Glossary?orderby=published&amp;alt=json-in-script&amp;callback=startpost&amp;max-results=9999"></script></ul>
+
+  </div>
+
+</body>
+</html>
